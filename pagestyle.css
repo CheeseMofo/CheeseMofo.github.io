@@ -1,5 +1,6 @@
 body{
     background-color: black;
+    -webkit-text-size-adjust: 100%;
 }
 #cover{
     width: 100%;
