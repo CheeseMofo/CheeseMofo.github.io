@@ -1,0 +1,497 @@
+body{
+    background-color: black;
+}
+#cover{
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.coverbg{
+    opacity: 0.7;
+    background-color:black;
+    width: 100%;
+    height: 100%;
+}
+.introduction{
+    padding-right: 10px;
+    overflow: auto;
+    background-color: black;
+    width: 42.96%;
+    height: 62.2%;
+    position: absolute;
+    top: 18.9%;
+    left: 29%;
+    opacity: 1;
+    font-family: copperplate;
+}
+.itemnameintro{
+    font-size: 25px;
+    width: 97.3%;
+    height: 11.4%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    color: whitesmoke;
+    top: 0;
+    left: 0;
+    background-color: black;
+}
+.delintro{
+    opacity: 0.5;
+    padding: 5px;
+    font-size: 20px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 20px;
+    height: 35px;
+    right: 10px;
+    color: whitesmoke;
+    top: 0;
+    right: 2.7%;
+}
+.delintro:hover{
+    opacity: 1;
+    font-size: 25px;
+    color: goldenrod;
+}
+.imgintro{
+    width: 97.3%;
+    position: absolute;
+    top: 11.4%;
+    left: 0;
+    height: 350px;
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+}
+.imginintro{
+    height: 100%;
+    width: 70%;
+}
+.introcontent{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    color: whitesmoke;
+    width: 100%;
+    text-align: center;
+}
+.topbar{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 11.8%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color:whitesmoke;
+    font-family: copperplate;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    border-bottom-width: 6px ;
+}
+.imgk{
+    object-fit: contain;
+    height: 92%;
+    border-style: double;
+}
+.tittle{
+    margin-left: 10.7%;
+    height: 100%;
+    display: flex;
+}
+#tittle1{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+#tittle2{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    background-color: black;
+    color: white;
+}
+.tittle:hover{
+    cursor:crosshair;
+}
+.but{
+    padding-left: 2.35%;
+    padding-right: 2.35%;
+    height: 100%;
+    width: 2.97%;
+    display: flex;
+    align-items: center;
+
+}
+.langbut{
+    width: 38px;
+    height: 34px;
+    line-height: 0;
+    cursor: pointer;
+    padding: 10px 10px;
+    background-color: white;
+    font-size: 10px;
+    font-family: copperplate;
+    border-style:double;
+    border-radius: 15%;
+    
+}
+.langbut:hover{
+    background-color: black;
+    color: white;
+    border-color:black;
+}
+#sidebar{
+    background-color: whitesmoke;
+    top: 12.76%;
+    left: 0;
+    position: fixed;
+    height:87.2%;
+    width: 14.2%;
+    font-family: copperplate;  
+}
+.listtitle{
+    background-color: black;
+    color: white;
+    height: 10%;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#cigarlist{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding:0;
+    font-size: 17px;
+    height: 82.1%;
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+.mainlist{
+    display: inline; 
+    width: 100%;
+    left: 0;
+}
+.mainlist li{
+    cursor: pointer;
+    list-style:none;
+    padding: 15px;
+    padding-right: 0;
+}
+a{
+    text-decoration: none; 
+    color: whitesmoke;
+}
+
+.mainlist li:hover{
+    background-color: black;
+    font-size: 28px;
+    text-align: right;
+    a{
+        color: goldenrod;
+    }
+    
+}
+#cart{
+    height: 82.1%;
+    background-color: black;
+}
+.cartbut{
+    transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+    text-align: center;
+    font-family: copperplate;
+    width: 100%;
+    font-size: 20px;
+    cursor: pointer;
+    border-style: none;
+    background-color: black;
+    color: white;
+    height: 7.9%;
+    z-index: 1;
+    display: block;
+    position: relative;
+}
+.cartbut::before,.cartbut::after{
+    content: "";
+    position: absolute;
+    transition: inherit;
+    top: 0;
+    height: 100%;
+    width: 0;
+    z-index: -1;
+}
+.cartbut:hover{
+    color: black;
+    transition-delay: 0.5s;
+}
+.cartbut:hover::before{
+    transition-delay: 0s;
+}
+.cartbut:hover::after{
+    background-color: white;
+    transition-delay: 0.35s;
+}
+.cartbut::before{
+    left: 0;
+    border: 1px solid white;
+    border-left: 0;
+    border-right: 0;
+    
+}
+.cartbut::after{
+    right: 0;   
+}
+.cartbut:hover::before,.cartbut:hover::after{
+    width: 100%;
+}
+.cartlist li{
+    display:flex;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 90%;
+    justify-content: space-between;
+    list-style:none;
+    background-color: black;
+    color: whitesmoke;
+    transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+    position: relative;
+}
+.cartlist li::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border: 1px solid goldenrod;
+    transition: inherit;
+    width: 0;
+}
+.cartlist li:hover::before{
+    transition-delay:0s ;
+    width: 100%;
+}
+.cartlist1 label:hover{
+    color: goldenrod;
+}
+.cartlist{
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: black;
+    height: 88.9%;
+}
+.order{
+    text-align: center;
+    font-family: copperplate;
+    width: 100%;
+    padding: 15px ;
+    font-size: 20px;
+    cursor: pointer;
+    border-style:none;
+    transition: background-color,1s;
+    background-color: black;
+    color: whitesmoke;
+    height: 11.1%;
+}
+.order:hover{
+    transition: background-color,1s;
+    background-color: goldenrod;
+    border-top-style: none;
+    border-radius: 50%;
+    
+}
+.header1{
+    position: fixed;
+    height: 8.19%;
+    right: 0;
+    top: 12.76%;
+    background-color:black;
+    width: 85.8%;
+    font-family: copperplate;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.header2{
+    position: fixed;
+    height: 5%;
+    right: 0;
+    top: 20.95%;
+    background-color: black;
+    text-align: center;
+    width: 85.8%;
+    font-family: copperplate;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#imgb{
+    height: 80%;
+    border-style: solid;
+    border-color: goldenrod;
+    background-color: whitesmoke;
+}
+#brand{
+    font-size: 100%;
+    border-bottom-style: solid;
+    border-right-style: inset;
+    border-bottom-color: goldenrod;
+    color: white;
+    margin: 0;
+    
+}
+#imgplace{
+    position: fixed;
+    right: 0;
+    top: 25.95%;
+    width: 85.8%;
+    height: 65.5%;
+    background-color:black;
+    display:flex;
+    justify-content:space-evenly;
+    align-items: center;
+
+  
+}
+.imgleft{
+    cursor: pointer;
+    height: 71.6%;
+    width: 24.2%;
+}
+.imgleft img{
+    width: 100%;
+    height: 100%;
+}
+.imgmain{
+    cursor: pointer;
+    background-color: black;
+    width: 50.1%;
+    height: 100%;
+    text-align: center;
+    display: block;
+
+}
+.imgmain img{
+    object-fit:contain;
+    width: 100%;
+    height: 93.67%;
+}
+.mainitemname{
+    font-size: 25px;
+    font-family: copperplate;
+    color: white;
+
+}
+.imgright{
+    cursor: pointer;
+    height: 71.6%;
+    width: 24.2%;
+}
+.imgright img{
+    height: 100%;
+    width: 100%;
+}
+.footer{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 8.5%;
+    width: 85.8%;
+}
+.addtocart{
+    position: relative;
+    font-size: 25px;
+    font-family: copperplate;
+    background-color: black;
+    color: whitesmoke;
+    cursor: pointer;
+    border-style: none;
+    padding: 5px;
+}
+.addtocart span:nth-child(1),.addtocart span:nth-child(2),.addtocart span:nth-child(3),.addtocart span:nth-child(4){
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: goldenrod;
+}
+.addtocart span:nth-child(1){
+    width: 1px;
+    left: 0;
+    bottom: 0;
+}
+.addtocart span:nth-child(2){
+    height: 1px;
+    left: 0;
+    top: 0;
+}
+.addtocart span:nth-child(3){
+    width: 1px;
+    right: 0;
+    top: 0;
+}
+.addtocart span:nth-child(4){
+    height: 1px;
+    right: 0;
+    bottom: 0;
+}
+.addtocart:hover span:nth-child(1){
+    animation: move1 1500ms infinite ease;
+}
+.addtocart:hover span:nth-child(2){
+    animation: move2 1500ms infinite ease;
+}
+.addtocart:hover span:nth-child(3){
+    animation: move3 1500ms infinite ease;
+}
+.addtocart:hover span:nth-child(4){
+    animation: move4 1500ms infinite ease;
+}
+@keyframes move1 {
+    0% { height: 100%; bottom: 0; }
+    54% { height: 0; bottom: 100%; }
+    55% { height: 0; bottom: 0; }
+    100% { height: 100%; bottom: 0; }
+}
+@keyframes move2 {
+    0% { width: 0; left: 0; }
+    50% { width: 100%; left: 0; }
+    100% { width: 0; left: 100%; }
+}
+@keyframes move3 {
+    0% { height: 100%; top: 0; }
+    54% { height: 0; top: 100%; }
+    55% { height: 0; top: 0; }
+    100% { height: 100%; top: 0; }
+}
+@keyframes move4 {
+    0% { width: 0; right: 0; }
+    55% { width: 100%; right: 0; }
+    100% { width: 0; right: 100%; }
+}
+.del{
+    border-style: none;
+    cursor: pointer;
+    background-color: black;
+    color: whitesmoke;
+    opacity: 0.5;
+    width: 24;
+    height: 22;
+}
+.del:hover{
+    opacity: 1;
+    color: goldenrod;
+}
