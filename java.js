@@ -24,6 +24,11 @@ const noncub=document.getElementById("noncub")
 const mainitemname=document.querySelector(".mainitemname")
 const itemnameintro=document.querySelector(".itemnameintro")
 const imginintro=document.querySelector(".imginintro")
+const sidebar=document.getElementById("sidebar")
+const header1=document.querySelector(".header1")
+const header2=document.querySelector(".header2")
+const imgplace=document.getElementById("imgplace")
+const footer=document.querySelector(".footer")
 cover.style.display="none"
 imgb.style.display="none"
 brand.style.display="none"
@@ -115,15 +120,15 @@ t1.addEventListener("mouseleave",whi)
 t2.addEventListener("mouseleave",whi)
 function bla(){
     t1.style.backgroundColor="black"
-    t1.style.color="white"
-    t2.style.backgroundColor="white"
+    t1.style.color="whitesmoke"
+    t2.style.backgroundColor="whitesmoke"
     t2.style.color="black"
 }
 function whi(){
-    t1.style.backgroundColor="white"
+    t1.style.backgroundColor="whitesmoke"
     t1.style.color="black"
     t2.style.backgroundColor="black"
-    t2.style.color="white"
+    t2.style.color="whitesmoke"
 }
 cigarlist.style.display="block"
 cartbut.addEventListener("click",cartop)
@@ -189,4 +194,22 @@ function order(){
 function setmain(x){
 
     imgm.src=x.src
+}
+function showside(){
+    if(sidebar.style.display==""){
+        sidebar.style.display="none"
+        header1.style.width="100%"
+        header2.style.width="100%"
+        imgplace.style.width="100%"
+        footer.style.width="100%"
+        return
+    }
+    if(sidebar.style.display=="none"){
+        header1.style.width="85.8%"
+        header2.style.width="85.8%"
+        imgplace.style.width="85.8%"
+        footer.style.width="85.8%"
+        sidebar.style.display=""
+        return
+    }
 }
