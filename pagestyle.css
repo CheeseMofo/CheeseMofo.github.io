@@ -24,7 +24,7 @@ body{
     height: 62.2%;
     position: absolute;
     top: 18.9%;
-    left: 29%;
+    left: 28.52%;
     opacity: 1;
     font-family: copperplate;
 }
@@ -77,12 +77,12 @@ body{
     object-fit: scale-down;
 }
 .introcontent{
-    padding: 10px;
+    padding: 20px;
     line-height: 30px;
     position: relative;
     margin-top: 43px;
     color: whitesmoke;
-    width: 97.3%;
+    width: 95.3%;
     text-align: left;
 }
 .topbar{
@@ -141,18 +141,23 @@ body{
     height: 34px;
     line-height: 0;
     cursor: pointer;
-    padding: 10px 10px;
     background-color: whitesmoke;
     font-size: 10px;
     font-family: copperplate;
     border-style:double;
     border-radius: 15%;
-    
+    border-color:darkgray;
+}
+.langbut a{
+    text-decoration: none;
+    color: black;
 }
 .langbut:hover{
     background-color: black;
-    color: whitesmoke;
     border-color:black;
+    a{
+        color: whitesmoke;
+    }
 }
 #sidebar{
     background-color: whitesmoke;
@@ -198,14 +203,21 @@ a{
     color: whitesmoke;
 }
 
+@media(min-width:1200px){
+    .mainlist li:hover{
+        background-color: black;
+        font-size: 28px;
+        text-align: right;
+        a{
+            color: goldenrod;
+        }
+        
+    }
+}
 .mainlist li:hover{
-    background-color: black;
-    font-size: 28px;
-    text-align: right;
     a{
         color: goldenrod;
     }
-    
 }
 #cart{
     height: 82.1%;
@@ -307,11 +319,7 @@ a{
     height: 11.1%;
 }
 .order:hover{
-    transition: background-color,1s;
-    background-color: goldenrod;
-    border-top-style: none;
-    border-radius: 50%;
-    
+    color: goldenrod;
 }
 .header1{
     position: fixed;
@@ -366,7 +374,6 @@ a{
     align-items: center;
 }
 .imgleft{
-
     cursor: pointer;
     height: 71.6%;
     width: 24.2%;
@@ -388,7 +395,14 @@ a{
 .imgmain img{
     object-fit:scale-down;
     width: 100%;
-    height: 93.67%;
+    height: 90.12%;
+}
+.mainitemnameframe{
+    height: 9.88%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 .mainitemname{
     font-size: 25px;
@@ -418,6 +432,15 @@ a{
     height: 8.5%;
     width: 85.8%;
 }
+.design{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: white;
+    margin: 10px;
+    font-family: copperplate;
+    font-size: 10px;
+}
 .addtocart{
     position: relative;
     font-size: 21px;
@@ -426,10 +449,7 @@ a{
     color: whitesmoke;
     cursor: pointer;
     border-style: none;
-    padding-top: 0.787%;
-    padding-bottom: 0.787%;
-    padding-left:0.39% ;
-    padding-right: 0.39%;
+    text-align: center;
     height: 64.8%;
 }
 .addtocart span:nth-child(1),.addtocart span:nth-child(2),.addtocart span:nth-child(3),.addtocart span:nth-child(4){
@@ -520,5 +540,25 @@ a{
     }
     #sidebar{
         width: 182px;
+    }
+}
+@media(max-width:1200px){
+    .introduction{
+        width: 80%;
+        left: 10%;
+    }
+
+}
+@media (max-width:575px) {
+    .langbut{
+        padding: 5px;
+        font-size: 8px;
+        height: 27px;
+    }
+    .but{
+        margin-right: 5px;
+    }
+    .design{
+        font-size: 7px;
     }
 }

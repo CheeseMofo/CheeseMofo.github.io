@@ -124,14 +124,14 @@ function cartop(){
         cigarlist.style.display="none"
         cart.style.display="block"
         ltitle.innerHTML=cartbut.innerHTML
-        cartbut.innerHTML="Back to List"
+        cartbut.innerHTML="回到菜單"
         return
     }
     if(cigarlist.style.display=="none"){
         cigarlist.style.display="block"
         cart.style.display="none"
-        ltitle.innerHTML="List"
-        cartbut.innerHTML="Cart"
+        ltitle.innerHTML="菜單"
+        cartbut.innerHTML="購物車"
         return
     }   
 
@@ -148,7 +148,7 @@ function addtocart(){
     if(brand.innerHTML==""){
         return
     }
-    if(brand.innerHTML=="We have received your order please wait a moment"){
+    if(brand.innerHTML=="您的訂單已送出 請稍候"){
         return
     }
     newlist.innerHTML=`
@@ -173,11 +173,11 @@ function order(){
     if(cartlist.getElementsByTagName("li").length==0){
         return
     }
-    brand.innerHTML="We have received your order please wait a moment"
+    brand.innerHTML="您的訂單已送出 請稍候"
     cigarlist.style.display="block"
     cart.style.display="none"
-    ltitle.innerHTML="List"
-    cartbut.innerHTML="Cart"
+    ltitle.innerHTML="菜單"
+    cartbut.innerHTML="購物車"
     imgb.style.display="none"
     cartlist.innerHTML=""
     mainitemname.innerHTML=""
