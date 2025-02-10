@@ -1,0 +1,73 @@
+body{
+    background-color:white;
+    color: black;
+    overflow: auto;
+}
+::-webkit-scrollbar {
+    display: none;
+  }
+#datainput{
+    width: 100%;
+    position: relative;
+    display: grid;
+    gap: 5px;
+    font-size: 10px;
+    border: solid 1px black;
+    justify-items: center;
+    padding:5px 0 5px ;
+    
+}
+.datainputhead{
+    justify-content: space-evenly;
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+.datainputfoot{
+    justify-content: space-evenly;
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+.datainput input{
+    border-style: solid 1px black;
+    width: 10px;
+}
+.inputdata{
+    border: solid 1px darkgray;
+    background-color: white;
+    padding: 5px;
+    width: 40px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.inventorydatashowplace{
+    margin-top: 10px;
+    width: 100%;
+    position: relative;
+    border:solid 1px black;
+}
+.inventorydatashowbar{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    position: relative;
+    border-bottom:solid 1px black;
+    font-size: 15px;
+}
+.inventorydatalist{
+    width: 100%;
+    padding: 0;
+    font-size: 15px;
+}
+.inventorydatalist li{
+    padding: 10px 0 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.inventorydatalist li label{
+    text-align: center;
+    width: 20%;
+}

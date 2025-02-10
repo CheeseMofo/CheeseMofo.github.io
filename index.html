@@ -4,23 +4,96 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="pagestyle.css">
-        <title>柯尼雪茄</title>
+        <title>雪茄</title>
         <link rel="shortcut icon" href="https://weloveiconfonts.com/api/?family=openwebicons" />
     </head>
     <body>
         <div id="cover" >
             <div class="coverbg" onclick="closeintro()">
             </div>
-            <div class="introduction">
+            <div id="receipt">
+                <label class="receipttitle"  >Receipt</label>
+                <div class="date">
+                    <div class="dateday">
+                        <label class="day"></label>
+                    </div>
+                    <div class="datetime">
+                        <label class="time"></label>
+                    </div>
+                </div>
+                <div class="receiptorder">
+                    <ul class="receiptorderlist"></ul>
+                </div>
+                <div class="amountplace">
+                    <ul class="amountlist">
+                        <li>
+                            <label>Discount</label>
+                            <label></label>
+                        </li>
+                        <li>
+                            <label>Total Amount:</label>
+                            <label class="pricenumber"></label>
+                        </li>
+                    </ul>
+                    
+                </div>
+                <div class="thx">
+                    <label>We have received your order please wait a moment</label>
+                    <label>Thank You</label>
+                </div>
+                
+            </div>
+            <div id="introduction">
                 <label class="itemnameintro"></label>
                 <label class="delintro" onclick="closeintro()">X</label>
                 <div class="imgintro">
                     <img class="imginintro" src="">
                 </div>
+                <div class="sizetable">
+                    <div class="duration">
+                        <label>Duration</label>
+                        <label>10 m</label>
+                    </div>
+                    <div class="ringgauge">
+                        <label>Ring Guage</label>
+                        <label>26</label>
+                    </div>
+                    <div class="length">
+                        <label>Length</label>
+                        <label>115mm</label>
+                    </div>
+                    <div class="officialweight">
+                        <label>Official Weight</label>
+                        <label>2.81 g</label>
+                    </div>
+                </div>
                 <div class="introcontent">
                     <P>
-                        始創於1966年的高希霸，一直以來都被認為是優質古巴雪茄的代名詞。品牌最初為菲德爾·卡斯特羅(Fidel Castro) 創立，並在El Laguito工廠裡秘密製造，追求原料“精選再精選”、經過三次發酵以及堅持僱傭高素質的捲制工人進行成產的三大固有原則，當時只被卡斯特羅用來作為禮物送給外國政界友人。到了1982年才開始在國際市場上出售，如今品牌已經享譽世界，是不少雪茄愛好者追求的品牌，更經常在《雪茄迷》Cigar Aficionado的盲品中得分很高。
+                        小巧並且濃郁的味道，與Lanceros 和 Coronas的相同口味比較之下，它被認為是更豐富獨特豆香
                     </P>                    
+                </div>
+                <div class="addtocartinintro">
+                        <button class="addtocart" onclick="addtocart()">
+                            Add to Cart
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    <div class="pricenum">
+                        <div class="pricetag">
+                            <label id="price"></label>
+                        </div>
+                        <div class="num">
+                            <button class="minus" onclick="minus()">-</button>
+                            <input class="input" value="0" oninput="showp()">
+                            <button class="plus" onclick="plus()">+</button>
+                        </div>
+                        <div class="unit" onclick="boxbuy(this)">
+                            Stick
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -50,9 +123,14 @@
             </div>
             <div class="imgmain" >
                 <div class="mainitemnameframe">
-                    <label class="mainitemname">Short</label>
+                    <label class="mainitemname">PANETELAS</label>
                 </div>
-                <img class="imgm" onclick="popupintro(this)" src="https://webfile.timeforshares.com/product_profile/8/gallery/03_243.jpg?">
+                <div class="imgmainplace">
+                    <img class="img" id="sigloi" name="Siglo I" onclick="popupintro(this);setmain(this)" src="https://webfile.timeforshares.com/product_profile/10/gallery/03_747.jpg?">
+                    <img class="img" id="sigloii" name="Siglo II" onclick="setmain(this);popupintro(this)" src="https://webfile.timeforshares.com/product_profile/11/gallery/Cohiba-Siglo2_743.jpg?"">
+                    <img class="img" id="sigloiii" name="Siglo III" onclick="setmain(this);popupintro(this)" src="https://webfile.timeforshares.com/product_profile/396/gallery/Cohiba_Siglo_III_01_309.jpg?">
+                    <img class="img" id="sigloiv" name="Siglo IV" onclick="setmain(this);popupintro(this)" src="https://webfile.timeforshares.com/product_profile/12/gallery/Cohiba_Siglo_IV_01_206.jpg?">
+                 </div>
                 
             </div>
             <div class="imgright">
@@ -103,10 +181,10 @@
                             <li><a href="https://webfile.timeforshares.com/product_manufacturer/39/main_image/RamonAllones_450_x_300_688.jpg" onclick="showb(this);return false">Ramón Allones</a></li>
                             <li><a href="https://webfile.timeforshares.com/product_manufacturer/36/main_image/QuaiDOrsay_450_x_300_273.jpg" onclick="showb(this);return false">Quai d'Orsay</a></li>
                         </ul>
-                    <li id="noncub"><a href="#" onclick="noncubspread();return false">Non Cuban Cigars</a></li>
+                    <li id="noncub"><a href="#" onclick="noncubspread();return false">Others</a></li>
                         <ul id="noncubanlist">
-                            <li><a href="https://webfile.timeforshares.com/product_manufacturer/70/main_image/Oliva_450_x_300_458.jpg" onclick="showb(this); return false">Oliva</a></li>
-                            <li><a href="https://webfile.timeforshares.com/product_manufacturer/9/main_image/Davidoff_450_x_300_605.jpg" onclick="showb(this);return false">Davidoff</a></li>
+                            <li><a href="#" onclick="showb(this); return false">Empty</a></li>
+                            <li><a href="#" onclick="showb(this);return false">Empty</a></li>
                         </ul>
                 </ul>
             </nav>
@@ -125,5 +203,6 @@
 
         </div>
         <script src="java.js"></script>
+        <script src="inventory.js"></script>
     </body>
 </html>

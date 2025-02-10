@@ -16,7 +16,7 @@ body{
     width: 100%;
     height: 100%;
 }
-.introduction{
+#introduction{
     padding-right: 10px;
     overflow: auto;
     background-color: black;
@@ -27,11 +27,114 @@ body{
     left: 28.52%;
     opacity: 1;
     font-family: copperplate;
+    overflow-x:hidden;
+}
+#receipt{
+    overflow: auto;
+    background-color: whitesmoke;
+    width: 42.96%;
+    height: 80%;
+    position: absolute;
+    top: 10%;
+    left: 28.52%;
+    opacity: 1;
+    font-family: copperplate;
+    overflow-x:hidden;
+}
+.receipttitle{
+    position: relative;
+    top: 0;
+    left: 5%;
+    font-size: 30px;
+    width: 90%;
+    height: 11.4%;
+    display: flex;
+    padding: 10px 0 10px;
+    border-bottom-style:solid ;
+    border-width: 2px;
+    justify-content: space-around;
+    align-items: center;
+    color:gray;
+    background-color: whitesmoke;
+    font-family: Snell Roundhand, cursive;
+}
+.date{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    left: 5%;
+    width: 90%;
+    color: black;
+    background-color: whitesmoke;
+    padding: 10px 0 10px;
+    border-bottom:dashed 2px ;
+}
+.receiptorder{
+    position: relative;
+    left: 5%;
+    width: 90%;
+    color: black;
+    background-color: whitesmoke;
+    border-bottom:dashed 2px ;
+    margin: 0;
+}
+.receiptorderlist {
+    list-style: none;
+    display: grid;
+    width: 100%;
+    padding: 0;
+}
+.receiptorderlist li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0 10px;
+    width: 100%;
+}
+.receiptorderitem{
+    text-align: center;
+    display: grid;
+}
+.amountplace{
+    position: relative;
+    left: 5%;
+    width: 90%;
+    color: black;
+    background-color: whitesmoke;
+    border-bottom:dashed 2px ;
+    margin: 0;
+}
+.amountlist{
+    list-style: none;
+    padding: 0;
+}
+.amountlist li{
+    padding: 10px 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.thx{
+    width: 90%;
+    left: 5%;
+    position: relative;
+    color: black;
+    background-color: whitesmoke;
+    margin: 0;
+    justify-content: space-evenly;
+    display: grid;
+    font-size: 18px;
+    font-family: Snell Roundhand, cursive;
+    padding: 20px 0 20px;
+}
+.thx label{
+    padding: 10px 0 10px;
+    text-align: center;
 }
 .itemnameintro{
     font-size: 25px;
-    width: 97.3%;
-    height: 11.4%;
+    width: 100%;
+    
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -40,6 +143,7 @@ body{
     top: 0;
     left: 0;
     background-color: black;
+    text-align: center;
 }
 .delintro{
     opacity: 0.5;
@@ -54,15 +158,46 @@ body{
     right: 10px;
     color: whitesmoke;
     top: 0;
-    right: 2.7%;
+    right: 0;
 }
 .delintro:hover{
     opacity: 1;
     font-size: 25px;
     color: goldenrod;
 }
+.sizetable{
+    width: 90%;
+    display: flex;
+    position: relative;
+    margin-top:46px ;
+    color: whitesmoke;
+    align-items: center;
+    padding-top: 30px;
+    left: 5%;
+}
+.duration{
+    display: grid;
+    width: 25%;
+}
+.ringgauge{
+    display: grid;
+    width: 25%;
+}
+.length{
+    display: grid;
+    width: 25%;
+}
+.officialweight{
+    display: grid;
+    width: 25%;
+}
+@media(max-width:469px){
+    .sizetable{
+        font-size: 12px;
+    }
+}
 .imgintro{
-    width: 97.3%;
+    width: 100%;
     position: relative;
     top: 11.4%;
     left: 0;
@@ -70,6 +205,7 @@ body{
     display: flex;
     justify-content: space-around;
     background-color: black;
+    margin-top: 5px;
 }
 .imginintro{
     height: 100%;
@@ -77,13 +213,121 @@ body{
     object-fit: scale-down;
 }
 .introcontent{
-    padding: 20px;
+    display: block;
     line-height: 30px;
     position: relative;
-    margin-top: 43px;
     color: whitesmoke;
-    width: 95.3%;
+    width: 90%;
+    left: 5%;
     text-align: left;
+}
+.addtocartinintro{
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.pricenum{
+    display: flex;
+    width: 70%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.pricetag{
+    color: whitesmoke;
+    display: flex;
+    width: 42%;
+}
+#price{
+    align-items: center;
+    font-size: 25px;
+    display: flex;
+    text-align: center;
+}
+.num{
+    text-align: right;
+    display: flex;
+}
+.minus{
+    cursor: pointer;
+    border-style: solid;
+    border-color: whitesmoke;
+    background-color: black;
+    color: white;
+    width: 25px;
+    padding: 6px 5px 6px ;
+    font-size: 15px;
+    text-align: center;
+    align-items: center;
+}
+.input{
+    outline: none;
+    font-size: 15px;
+    width: 25px;
+    padding: 5px 10px 2px;
+    text-align: center;
+}
+.plus{
+    border-color: whitesmoke;
+    cursor: pointer;
+    border-style: solid;
+    background-color: black;
+    color: white;
+    width: 25px;
+    padding: 6px 5px 6px;
+    font-size: 15px;
+    text-align: center;
+    align-items: center;
+}
+.unit{
+    margin-left: 5px;
+    height: 30px;
+    padding: 0 5px 0;
+    border-style: solid;
+    border-color: whitesmoke;
+    border-width: 2px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: whitesmoke;
+    cursor: pointer;
+    width: 50px;
+}
+
+@media(max-width:560px){
+    .addtocartinintro{
+        display: grid;
+        height: 220px;
+    }
+    .pricenum{
+        margin-top: 20px;
+        width: 100%;
+        display: grid;
+        justify-items: center;
+    }
+    .pricetag{
+        width: 100%;
+    }
+    .num{
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .unit{
+        margin-top: 20px;
+        width: 100%;
+        padding: 0;
+        margin-left: 0;
+    }
+    .minus ,.plus{
+        font-size: 20px;
+        width: 40px;
+    }
+
 }
 .topbar{
     display: flex;
@@ -104,8 +348,8 @@ body{
     object-fit: scale-down;
     height: 92%;
     width: 9.6%;
-    border-style: double;
-    background-color: white;
+    border-style:double;
+    background-color:whitesmoke;
 }
 .tittle{
     height: 100%;
@@ -377,6 +621,7 @@ a{
     cursor: pointer;
     height: 71.6%;
     width: 24.2%;
+    display: none;
 }
 .imgleft img{
     object-fit: scale-down ;
@@ -384,18 +629,32 @@ a{
     height: 100%;
 }
 .imgmain{
-    cursor: pointer;
     background-color: black;
-    width: 50.1%;
+    width: 100%;
     height: 100%;
     text-align: center;
-    display: block;
-
+    display:block;
 }
-.imgmain img{
+
+::-webkit-scrollbar {
+    display: none;
+  }
+.imgmainplace{
+    display: flex;
+    width: 100%;
+    height: 90.13%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    align-items: center;
+}
+.imgmainplace img{
+    cursor: pointer;
     object-fit:scale-down;
     width: 100%;
-    height: 90.12%;
+    height:100%;
+    flex-shrink: 0;
+    scroll-snap-align:center;
+    transition: height 0.1s ease-in-out;
 }
 .mainitemnameframe{
     height: 9.88%;
@@ -414,6 +673,7 @@ a{
     cursor: pointer;
     height: 71.6%;
     width: 24.2%;
+    display: none;
 }
 .imgright img{
     object-fit: scale-down ;
@@ -543,7 +803,11 @@ a{
     }
 }
 @media(max-width:1200px){
-    .introduction{
+    #introduction{
+        width: 80%;
+        left: 10%;
+    }
+    #receipt{
         width: 80%;
         left: 10%;
     }

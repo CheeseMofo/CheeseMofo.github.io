@@ -29,12 +29,29 @@ const header1=document.querySelector(".header1")
 const header2=document.querySelector(".header2")
 const imgplace=document.getElementById("imgplace")
 const footer=document.querySelector(".footer")
+const input=document.querySelector(".input")
+const price=document.getElementById("price")
+const unit=document.querySelector(".unit")
+const introduction=document.getElementById("introduction")
+const receipt=document.getElementById("receipt")
+const day=document.querySelector(".day")
+const time=document.querySelector(".time")
+const receiptorderlist=document.querySelector(".receiptorderlist")
+const amountlist=document.querySelector(".amountlist")
+const pricenumber=document.querySelector(".pricenumber")
+const imgmainplace=document.querySelector(".imgmainplace")
+var pricenum=0
 cover.style.display="none"
 noncubanlist.style.display="none"
 listnew.style.display="none"
 listpopular.style.display="none"
 cubanlist.style.display="none"
 cart.style.display="none"
+receipt.style.display="none"
+var box=false
+function Commas(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 function newaspread(){
     if(listnew.style.display=="block"){
         listnew.style.display="none"
@@ -138,33 +155,44 @@ function cartop(){
     }
 function showb(p){
     imgb.src=p.href
-    itemnameintro.innerHTML=p.innerHTML
     brand.innerText=p.innerText
     imgb.style.display="inline"
     brand.style.display="inline"
 }
 function addtocart(){
     const newlist=document.createElement("li")
-    if(brand.innerHTML==""){
-        return
-    }
-    if(brand.innerHTML=="We have received your order please wait a moment"){
-        return
-    }
+    const newlist2=document.createElement("li")
     newlist.innerHTML=`
-        <label claas="orderitem">${brand.innerHTML}<br />${mainitemname.innerHTML}</label>
+        <label>${brand.innerHTML}<br />${mainitemname.innerHTML}</label>
         <button class="del">Y</button>
     `
+    newlist2.innerHTML=`
+        <div class="receiptorderitem">
+            <label>${brand.innerHTML}</label>
+            <label>${mainitemname.innerHTML}</label>
+        </div>
+        <label>${input.value}${unit.innerHTML}</label>
+        <label>${price.innerHTML}</label>
+    `
+    
     const del=newlist.querySelector(".del")
     del.addEventListener("click",function(){
         newlist.remove()
+        newlist2.remove()
+        pricenum-=showp()
     })
+    pricenum+=showp()
     cartlist.append(newlist)
+    receiptorderlist.append(newlist2)
 }
 
 function popupintro(x){
     cover.style.display="block"
+    introduction.style.display="block"
+    receipt.style.display="none"
     imginintro.src=x.src
+    itemnameintro.innerHTML=brand.innerHTML+"<br>"+mainitemname.innerHTML
+
 }
 function closeintro(){
     cover.style.display="none"
@@ -173,18 +201,35 @@ function order(){
     if(cartlist.getElementsByTagName("li").length==0){
         return
     }
-    brand.innerHTML="We have received your order please wait a moment"
+    datedate()
+    pricenumber.innerHTML="TWD   $"+Commas(pricenum)
+    cover.style.display="block"
+    introduction.style.display="none"
+    receipt.style.display="block"
     cigarlist.style.display="block"
     cart.style.display="none"
     ltitle.innerHTML="List"
     cartbut.innerHTML="Cart"
-    imgb.style.display="none"
     cartlist.innerHTML=""
-    mainitemname.innerHTML=""
+}
+function datedate(){
+    var today=new Date()
+    y=today.getFullYear()
+    m=today.getMonth()+1
+    d=today.getDate()
+    h=today.getHours()
+    mi=today.getMinutes()
+    s=today.getSeconds()
+    day.innerHTML="Date:"+y+"-"+m+"-"+d
+    time.innerHTML=h+":"+mi+":"+s
+
 }
 function setmain(x){
-
-    imgm.src=x.src
+    mainitemname.innerHTML=x.name
+    x.scrollIntoView({ 
+        behavior: "smooth", 
+        inline: "center"
+      })
 }
 function showside(){
     if(sidebar.style.display==""){
@@ -204,3 +249,56 @@ function showside(){
         return
     }
 }
+function showi(x){
+    imgm.src=x.src
+}
+function minus(){
+    if(input.value==0 ){
+        return
+    }
+    input.value-=1
+    showp()
+
+}
+function plus(){
+    if(input.value==""){
+        input.value=0
+    }
+    x=parseFloat(input.value)
+    input.value=x+1
+    showp()
+}
+function showp(){
+    if(input.value==0){
+        price.innerHTML=""
+        return
+    }
+    if(box==true){
+        price.innerText="TWD  $"+Commas(input.value*1000*25)
+        return input.value*1000*25
+    }
+    if(box==false){
+        price.innerHTML="TWD  $"+Commas(input.value*1000)
+        return input.value*1000
+    }
+    
+}
+function boxbuy(x){
+    if(box==false){
+    unit.style.backgroundColor="whitesmoke"
+    unit.style.color="black"
+    box=true
+    x.innerHTML="Box"
+    showp()
+    return
+    }
+    if(box==true){
+    unit.style.backgroundColor="black"
+    unit.style.color="whitesmoke"
+    box=false
+    x.innerHTML="stick"
+    showp()
+    return
+    }
+}
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Inventory Entry</title>
+        <link rel="stylesheet" href="inventory.css">
+    </head>
+    <body>
+        <div id="datainput">
+            <div class="datainputhead">
+                <label class="inputbrandlabel">品牌</label>
+                <input class="inputbrand" placeholder="請輸入品牌">
+                <label class="inputitemlabel">品項</label>
+                <input class="inputitem" placeholder="請輸入品項">
+                <label class="inventorylabel">存量</label>
+                <input class="inputinventory" placeholder="請輸入存量">
+            </div>
+            <div class="datainputfoot">
+                <label class="pricelabel">定價</label>
+                <input class="inputprice" placeholder="請輸入定價">
+                <label class="sizetablelabel">尺寸</label>
+                <input class="inputduration" placeholder="請輸入抽吸時間">
+                <input class="inputringguage" placeholder="請輸入環徑">
+                <input class="inputlength" placeholder="請輸入長度">
+                <input class="inputweight" placeholder="請輸入重量">
+            </div>
+            <button class="inputdata" onclick="submit()">確認</button>
+        </div>
+        <div class="inventorydatashowplace">
+            <div class="inventorydatashowbar">
+                <label>進貨時間</label>
+                <label>品牌</label>
+                <label>品項</label>
+                <label>進量</label>
+                <label>總存量</label>
+            </div>
+            <div class="inventorydatashow">
+                <ul class="inventorydatalist"></ul>
+            </div>
+        </div>
+        <script src="inventory.js"></script>
+    </body>
+</html>
