@@ -2,6 +2,113 @@ body{
     background-color: black;
     -webkit-text-size-adjust: 100%;
 }
+#langcover{
+    font-family: copperplate;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1000;
+    top:0;
+    left: 0;
+    position: fixed;
+    display: grid;
+    align-items: center;
+    transition-duration: 2s;
+    transition-behavior:allow-discrete;
+    opacity: 1;
+}
+#langcover[hidden]{
+    opacity: 0;
+}
+.langcovercontent{
+    width: 100%;
+    display: grid;
+    justify-items:center ;
+    gap: 150px;
+
+}
+.cigarentryplace{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 200px;
+    height: 50px;
+    font-size: 35px;
+    color: white;
+    position: relative;
+}
+.cigarentryplace span:nth-child(5), .cigarentryplace span:nth-child(2),.cigarentryplace span:nth-child(3),.cigarentryplace span:nth-child(4){
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: goldenrod;
+}
+.cigarentryplace span:nth-child(5){
+    width: 1px;
+    left: 0;
+    bottom: 0;
+}
+.cigarentryplace span:nth-child(2){
+    height: 1px;
+    left: 0;
+    top: 0;
+}
+.cigarentryplace span:nth-child(3){
+    width: 1px;
+    right: 0;
+    top: 0;
+}
+.cigarentryplace span:nth-child(4){
+    height: 1px;
+    right: 0;
+    bottom: 0;
+}
+.cigarentryplace span:nth-child(5){
+    animation: move1 1500ms infinite ease;
+}
+.cigarentryplace span:nth-child(2){
+    animation: move2 1500ms infinite ease;
+}
+.cigarentryplace span:nth-child(3){
+    animation: move3 1500ms infinite ease;
+}
+.cigarentryplace span:nth-child(4){
+    animation: move4 1500ms infinite ease;
+}
+.langbutplace{
+    background-color: black;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.langbutplace button{
+    font-family: copperplate;
+    font-size: 15px;
+    background-color: black;
+    border: none;
+    color: whitesmoke;
+}
+.langbutplace button:hover{
+    a{
+        color: goldenrod;
+    }
+}
+.langcoverdesign{
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+.langcoverdesign label{
+    background-color: black;
+    color: whitesmoke;
+}
 #cover{
     width: 100%;
     height: 100%;
@@ -90,6 +197,10 @@ body{
     align-items: center;
     padding: 10px 0 10px;
     width: 100%;
+}
+
+.receiptorderlist li label{
+    text-align: center;
 }
 .receiptorderitem{
     text-align: center;
@@ -194,6 +305,9 @@ body{
 @media(max-width:469px){
     .sizetable{
         font-size: 12px;
+    }
+    .imgmainplace{
+        width: 80%;
     }
 }
 .imgintro{
@@ -337,31 +451,35 @@ body{
     position: fixed;
     top: 0;
     left: 0;
-    background-color:whitesmoke;
+    background-color:black;
     font-family: copperplate;
     border-bottom-style: solid;
     border-bottom-color: black;
     border-bottom-width: 6px ;
 }
+.menu{
+    padding-left: 2.35%;
+    padding-right: 2.35%;
+    height: 100%;
+    width: 2.97%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 .imgk{
+    font-size: 35px;
     cursor: pointer;
-    object-fit: scale-down;
-    height: 92%;
-    width: 9.6%;
-    border-style:double;
-    background-color:whitesmoke;
+    color: whitesmoke;
+    transition: all 0.3s linear;
+}
+.imgk:hover{
+    color: #464646;
 }
 .tittle{
     height: 100%;
     display: flex;
 }
-#tittle1{
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-
-#tittle2{
+#title1{
     display: flex;
     align-items: center;
     height: 100%;
@@ -378,30 +496,16 @@ body{
     width: 2.97%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
-.langbut{
-    width: 38px;
-    height: 34px;
-    line-height: 0;
+#receiptbut{
     cursor: pointer;
-    background-color: whitesmoke;
-    font-size: 10px;
-    font-family: copperplate;
-    border-style:double;
-    border-radius: 15%;
-    border-color:darkgray;
+    color: whitesmoke;
+    font-size: 35px;
+    transition: all 0.3s linear;
 }
-.langbut a{
-    text-decoration: none;
-    color: black;
-}
-.langbut:hover{
-    background-color: black;
-    border-color:black;
-    a{
-        color: whitesmoke;
-    }
+#receiptbut:hover{
+    color: #464646;
 }
 #sidebar{
     background-color: whitesmoke;
@@ -410,7 +514,8 @@ body{
     position: fixed;
     height:87.2%;
     width: 14.2%;
-    font-family: copperplate;  
+    font-family: copperplate; 
+    transition: all 0.5s linear; 
 }
 .listtitle{
     background-color: black;
@@ -571,7 +676,7 @@ a{
     right: 0;
     top: 12.76%;
     background-color:black;
-    width: 85.8%;
+    width: 100%;
     font-family: copperplate;
     display: flex;
     justify-content: space-around;
@@ -585,7 +690,7 @@ a{
     top: 20.95%;
     background-color: black;
     text-align: center;
-    width: 85.8%;
+    width: 100%;
     font-family: copperplate;
     display: flex;
     align-items: center;
@@ -610,30 +715,17 @@ a{
     position: fixed;
     right: 0;
     top: 25.95%;
-    width: 85.8%;
+    width: 100%;
     height: 65.5%;
     background-color:black;
-    display:flex;
-    justify-content:space-evenly;
-    align-items: center;
-}
-.imgleft{
-    cursor: pointer;
-    height: 71.6%;
-    width: 24.2%;
-    display: none;
-}
-.imgleft img{
-    object-fit: scale-down ;
-    width: 100%;
-    height: 100%;
 }
 .imgmain{
     background-color: black;
     width: 100%;
     height: 100%;
-    text-align: center;
-    display:block;
+    display:grid;
+    justify-items:center;
+    justify-content: center;
 }
 
 ::-webkit-scrollbar {
@@ -641,8 +733,8 @@ a{
   }
 .imgmainplace{
     display: flex;
-    width: 100%;
-    height: 90.13%;
+    width: 80%;
+    height: 80.24%;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     align-items: center;
@@ -655,9 +747,10 @@ a{
     flex-shrink: 0;
     scroll-snap-align:center;
     transition: height 0.1s ease-in-out;
+    
 }
 .mainitemnameframe{
-    height: 9.88%;
+    height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -669,16 +762,14 @@ a{
     color: whitesmoke;
 
 }
-.imgright{
-    cursor: pointer;
-    height: 71.6%;
-    width: 24.2%;
-    display: none;
-}
-.imgright img{
-    object-fit: scale-down ;
-    height: 100%;
+.sizetablemain{
     width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: whitesmoke;
+    font-size: 12px;
+    text-align: center;
 }
 .footer{
     position: fixed;
@@ -690,7 +781,7 @@ a{
     align-items: center;
     justify-content: space-around;
     height: 8.5%;
-    width: 85.8%;
+    width: 100%;
 }
 .design{
     position: absolute;
@@ -800,9 +891,8 @@ a{
     }
     #sidebar{
         width: 182px;
+        
     }
-}
-@media(max-width:1200px){
     #introduction{
         width: 80%;
         left: 10%;
@@ -811,7 +901,6 @@ a{
         width: 80%;
         left: 10%;
     }
-
 }
 @media (max-width:575px) {
     .langbut{
@@ -820,7 +909,7 @@ a{
         height: 27px;
     }
     .but{
-        margin-right: 5px;
+        margin-right: 15px;
     }
     .design{
         font-size: 7px;

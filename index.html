@@ -2,12 +2,30 @@
 <html lang="EN" >
     <meta charset = "UTF-8">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <link rel="stylesheet" href="pagestyle.css">
         <title>雪茄</title>
         <link rel="shortcut icon" href="https://weloveiconfonts.com/api/?family=openwebicons" />
     </head>
     <body>
+        <div id="langcover">
+            <div class="langcovercontent">
+                <div class="cigarentryplace">
+                    <label class="cigarentry">Cigar</label>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="langbutplace">
+                    <button class="zhbut"><a href="首頁.html">中文</a></button>
+                    <button class="enbut" onclick="entry()"><a href="#langcover">English</a></button>
+                </div>
+            </div>
+            <div class="langcoverdesign">
+                <label>Design by koenigCigar</label>
+            </div>
+        </div>
         <div id="cover" >
             <div class="coverbg" onclick="closeintro()">
             </div>
@@ -98,17 +116,16 @@
             </div>
         </div>
         <div class="topbar">
-            <img class="imgk" onclick="showside()" src="data:image/png;base64,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" alt="koenigsegg logo">
+            <div class="menu">
+                <label class="imgk" onclick="showside()">☰</label> 
+            </div>
             <div class="tittle">
-                <div id="tittle1">
-                    <h1>Koenig</h3>
-                </div>
-                <div id="tittle2">
+                <div id="title1">
                     <h1>Cigar</h3>
                 </div>
             </div>
             <div class="but">
-                <button class="langbut"><a href="首頁.html">EN</a></button>
+                <label id="receiptbut" onclick="showreceipt()">✉︎</label>
             </div>
         </div>
         <div class="header1">
@@ -118,25 +135,35 @@
             <label id="brand">New arrival</label>
         </div>
         <div id="imgplace">
-            <div class="imgleft">
-                <img class="imgl" onclick="setmain(this)" src="https://webfile.timeforshares.com/product_profile/5789/gallery/01_46.jpg">
-            </div>
             <div class="imgmain" >
                 <div class="mainitemnameframe">
                     <label class="mainitemname">PANETELAS</label>
                 </div>
                 <div class="imgmainplace">
-                    <img class="img" id="sigloi" name="Siglo I" onclick="popupintro(this);setmain(this)" src="https://webfile.timeforshares.com/product_profile/10/gallery/03_747.jpg?">
-                    <img class="img" id="sigloii" name="Siglo II" onclick="setmain(this);popupintro(this)" src="https://webfile.timeforshares.com/product_profile/11/gallery/Cohiba-Siglo2_743.jpg?"">
-                    <img class="img" id="sigloiii" name="Siglo III" onclick="setmain(this);popupintro(this)" src="https://webfile.timeforshares.com/product_profile/396/gallery/Cohiba_Siglo_III_01_309.jpg?">
-                    <img class="img" id="sigloiv" name="Siglo IV" onclick="setmain(this);popupintro(this)" src="https://webfile.timeforshares.com/product_profile/12/gallery/Cohiba_Siglo_IV_01_206.jpg?">
+                    <img class="img" id="sigloi" name="Siglo I" onclick="popupintro(this);setmain(this)" src="https://www.nextcigar.com/cdn/shop/products/30228960378973_1220x_crop_center.jpg?v=1662344701">
+                    <img class="img" id="sigloii" name="Siglo II" onclick="setmain(this);popupintro(this)" src="https://www.nextcigar.com/cdn/shop/products/30229067006045_1220x_crop_center.jpg?v=1662344706">
+                    <img class="img" id="sigloiii" name="Siglo III" onclick="setmain(this);popupintro(this)" src="https://www.nextcigar.com/cdn/shop/files/SNCOHCIG135CohibaSigloIII-2_1220x_crop_center.jpg?v=1722405230">
+                    <img class="img" id="siglovi" name="Siglo VI" onclick="setmain(this);popupintro(this)" src="https://www.nextcigar.com/cdn/shop/products/31050652418141_1220x_crop_center.jpg?v=1662344727">
                  </div>
-                
+                 <div class="sizetablemain">
+                    <div class="duration">
+                        <label>Duration</label>
+                        <label>10 m</label>
+                    </div>
+                    <div class="ringgauge">
+                        <label>Ring Guage</label>
+                        <label>26</label>
+                    </div>
+                    <div class="length">
+                        <label>Length</label>
+                        <label>115mm</label>
+                    </div>
+                    <div class="officialweight">
+                        <label>Official Weight</label>
+                        <label>2.81 g</label>
+                    </div>
+                 </div>
             </div>
-            <div class="imgright">
-                <img class="imgr" onclick="setmain(this)" src="https://webfile.timeforshares.com/product_profile/4541/gallery/1_952.jpg"
-            </div>
-           
         </div>
         <div class="footer">
             <button class="addtocart" onclick="addtocart()">

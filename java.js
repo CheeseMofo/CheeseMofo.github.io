@@ -1,6 +1,4 @@
 
-const t1=document.getElementById("tittle1")
-const t2=document.getElementById("tittle2")
 const imgmain=document.querySelector(".imgmain")
 const imgm=document.querySelector(".imgm")
 const imgl=document.querySelector(".imgl")
@@ -40,6 +38,8 @@ const receiptorderlist=document.querySelector(".receiptorderlist")
 const amountlist=document.querySelector(".amountlist")
 const pricenumber=document.querySelector(".pricenumber")
 const imgmainplace=document.querySelector(".imgmainplace")
+const langcover=document.getElementById("langcover")
+const receiptbut=document.getElementById("receiptbut")
 var pricenum=0
 cover.style.display="none"
 noncubanlist.style.display="none"
@@ -48,7 +48,9 @@ listpopular.style.display="none"
 cubanlist.style.display="none"
 cart.style.display="none"
 receipt.style.display="none"
+receiptbut.style.display="none"
 var box=false
+var sidebarshow=true
 function Commas(number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
@@ -118,22 +120,6 @@ function noncubspread(){
         return
     }
 }
-t1.addEventListener("mouseover",bla)
-t2.addEventListener("mouseover",bla)
-t1.addEventListener("mouseleave",whi)
-t2.addEventListener("mouseleave",whi)
-function bla(){
-    t1.style.backgroundColor="black"
-    t1.style.color="whitesmoke"
-    t2.style.backgroundColor="whitesmoke"
-    t2.style.color="black"
-}
-function whi(){
-    t1.style.backgroundColor="whitesmoke"
-    t1.style.color="black"
-    t2.style.backgroundColor="black"
-    t2.style.color="whitesmoke"
-}
 cigarlist.style.display="block"
 cartbut.addEventListener("click",cartop)
 function cartop(){
@@ -202,6 +188,7 @@ function order(){
         return
     }
     datedate()
+    receiptbut.style.display="block"
     pricenumber.innerHTML="TWD   $"+Commas(pricenum)
     cover.style.display="block"
     introduction.style.display="none"
@@ -232,20 +219,14 @@ function setmain(x){
       })
 }
 function showside(){
-    if(sidebar.style.display==""){
-        sidebar.style.display="none"
-        header1.style.width="100%"
-        header2.style.width="100%"
-        imgplace.style.width="100%"
-        footer.style.width="100%"
+    if(sidebarshow==true){
+        sidebar.style.transform="translateX(-"+100+"%)"
+        sidebarshow=false
         return
     }
-    if(sidebar.style.display=="none"){
-        header1.style.width="85.8%"
-        header2.style.width="85.8%"
-        imgplace.style.width="85.8%"
-        footer.style.width="85.8%"
-        sidebar.style.display=""
+    if(sidebarshow==false){
+        sidebar.style.transform="translateX(-"+0+"%)"
+        sidebarshow=true
         return
     }
 }
@@ -301,4 +282,33 @@ function boxbuy(x){
     return
     }
 }
+function entry(){
+    showside()
+    langcover.toggleAttribute("hidden")
+    langcover.style.display="none"
+}
+function showreceipt(){
+    cover.style.display="block"
+    introduction.style.display="none"
+    receipt.style.display="block"
+}
+const option = {
+    root: null,
+    rootMargin: "0px 0px 0px 0px",
+    threshold: 0.5,
+}
+function callback (entries,observe){
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            console.log(entry.target.name)
+            mainitemname.innerHTML=entry.target.name
+        }
+    });
+}
+const imgs=document.querySelectorAll(".img")
+const observe=new IntersectionObserver(callback,option)
+imgs.forEach(img =>{
+    observe.observe(img)
+})
+
 
